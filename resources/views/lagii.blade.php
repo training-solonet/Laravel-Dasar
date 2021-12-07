@@ -16,15 +16,15 @@
   <form action="/persegi-panjang">
     @csrf
     <div class="form-group">
-      <label>Panjang</label>
+      <label>Panjang :</label>
       <input class="form-control" name="panjang" value="{{ $panjang }}" disabled>
     </div>
     <div class="form-group">
-      <label>Lebar</label>
+      <label>Lebar :</label>
       <input class="form-control" name="lebar" value="{{ $lebar }}" disabled>
     </div>
     <div class="form-group">
-        <label>Luas</label>
+        <label>Luas :</label>
         <input class="form-control" value="{{ $luas }}"disabled>
       </div>
     <button type="submit" class="btn btn-primary">kembali</button>
