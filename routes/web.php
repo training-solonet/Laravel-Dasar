@@ -29,18 +29,14 @@ use Illuminate\Support\Facades\Route;
 //     return 'ini Halaman Buku page ke-'.$page;
 // });
 
-// Route::get('/user/{user}', function ($user) {
-//     return '<div style=display:flex;>
-//     <p style="display:flex; margin:auto; ">Selamat Datang</p>'. '<b style=display:flex; margin:auto;>'.$user.'</b>
-//     </div>';
+use App\Http\Controllers\BookController;
 
-// });
+// Route::get('/books', [BookController::class,'index']);
+// Route::get('/books/{judul}', [BookController::class,'index']);
 
-$komen = 'ini Halaman Buku page ke-';
+// Route::get('/books/{judul}', [BookController::class,'index']);
+Route::get('/books/{judul}', [BookController::class,'index']);
+Route::get('persegi-panjang', [BookController::class,'persegi_panjang']);
+Route::post('luas-persegi-panjang', [BookController::class,'luaspersegipanjang']);
+// Route::post('luas-persegi-panjang', [BookController::class,'luaspersegipanjang']);
 
-Route::get('/books/{page}', function ($page) {
-    // return ''.$page;
-    return '<p style="text-align:center; "><b>Selamat Datang</b><br>
-     <b style="font-size:2em;">"'.$page.'"<b></p>';
-
-});
