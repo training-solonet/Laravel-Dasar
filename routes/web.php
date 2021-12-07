@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/user/john', function () {
-    // return view('john');
-// });
 
-Route::get('users/{nama}', function ($nama) {
-    return '<h2><center>Selamat Datang<br>"'.$nama.'"</center></h2>';
-});
+use App\Http\Controllers\MegaController;
+// route menggunakan controler
+// Route::get('/books', [MegaController::class, 'index']);
+// // route menggunakan controler dan parameter
+// Route::get('/books/{judul}', [MegaController::class, 'index']);
+// //route mengguanan class persegipanjang
+// Route::get('persegi-panjang', [MegaController::class, 'luaspersegipanjang']);
+
+// Route::get('/persegi-panjang', [MegaController::class, 'persegi_panjang']);
+// Route::post('/luas-persegi-panjang', [MegaController::class, 'luaspersegipanjang']);
+
+
+Route::get('/segitiga', [MegaController::class, 'segitiga']);
+Route::post('/luas-segitiga', [MegaController::class, 'luassegitiga']);
