@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
         <label>Luas :</label>
-        <input class="form-control" value="{{ $luas }}"disabled>
+        <input class="form-control" value="{{ $luas }}" disabled>
       </div>
     <button type="submit" class="btn btn-primary">kembali</button>
   </form>
