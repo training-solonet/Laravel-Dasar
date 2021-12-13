@@ -37,6 +37,30 @@ class MegaController extends Controller
     //     return $luas;
     //  }
 
+    function luass(){
+        $alas = 3;
+        $tinggi=4;
+        $luas = $tinggi*$alas/2;
+        return $luas;
+    }
+
+    function luasjajargenjang(){
+        $alas = 5;
+        $tinggi=8;
+        $luas = $alas*$tinggi;
+        return $luas;
+    }
+
+
+    function luasbelahketupat(){
+        $d1 = 3;
+        $d2=6;
+        $luas = $d1*$d2/2;
+        return $luas;
+    }
+
+
+
 
     function segitiga()
     {
@@ -56,6 +80,7 @@ class MegaController extends Controller
         ]);
     }
 }
+
 
 
 
