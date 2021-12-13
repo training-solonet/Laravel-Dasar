@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +34,13 @@ Route::get('segitiga', [BookController::class, 'segitiga']);
 Route::post('/luas-segitiga', [BookController::class, 'luasSegitiga']);
 
 Route::get('/books', [BookController::class, 'index']);
+
+Route::get('/luas-segitiga-statis', [BookController::class, 'luasSegitigaStatis']);
+
+Route::get('/luas-jajargenjang-statis', [BookController::class, 'luasJajarGenjang']);
+
+Route::get('/luas-belahketupat-statis', [BookController::class, 'luasBelahKetupat']);
+
+Route::get('/buku', [BukuController::class, 'index']);
+
+Route::resource('buku', BukuController::class);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Persegi Panjang</title>
+    <title>main</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,21 +10,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="container mt-5">
-    <h2>Luas Segitiga</h2>
-    <form method="POST" action="/luas-segitiga">
-    @csrf
-    <div class="form-group">
-        <label>Alas</label>
-        <input type="number" placeholder="Masukan Panjang" class="form-control" name="alas">
+    <div class="container">
+        @yield('content')
     </div>
-    <div class="form-group">
-        <label>Tinggi</label>
-        <input type="number" placeholder="Masukan Lebar" class="form-control" name="tinggi">
-    </div>
-    <button type="submit" class="btn btn-primary">Hitung</button>
-    </form>
-</div>
 </body>
 </html>

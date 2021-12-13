@@ -58,4 +58,25 @@ class BookController extends Controller
             "luas" => $luas
         ]);
     }
+
+    public function luasSegitigaStatis(){
+        $alas = 3;
+        $tinggi = 4;
+        $luas = $alas * $tinggi / 2;
+        return $luas;
+    }
+
+    public function luasJajarGenjang(){
+        $alas = 5;
+        $tinggi = 8;
+        $luas = $alas * $tinggi;
+        return $luas;
+    }
+
+    public function luasBelahKetupat(){
+        $diagonalA = 3;
+        $diagonalB = 6;
+        $luas = $diagonalA * $diagonalB / 2;
+        return $luas;
+    }
 }
