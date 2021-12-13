@@ -27,6 +27,37 @@ class BookController extends Controller
             ]
         );
     }
+
+    function luas2_segitiga()
+    {
+        $alas = 3;
+        $tinggi = 4;
+        $luas = $alas * $tinggi / 2;
+
+        return $luas;
+    }
+
+    // public function luas(){
+    //     echo $this->
+    // }
+
+    function luasjajargenjang()
+    {
+        $alas = 5;
+        $tinggi = 8;
+        $luas = $alas * $tinggi;
+
+        return $luas;
+    }
+
+    function luasbelahketupat()
+    {
+        $d1 = 3;
+        $d2 = 6;
+        $luas = $d1 * $d2/2;
+
+        return $luas;
+    }
     //public function luaspersegipanjang()
     //{
         //$panjang = 4;

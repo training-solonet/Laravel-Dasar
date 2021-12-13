@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-
+use App\Http\Controllers\BukuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +32,25 @@ use App\Http\Controllers\BookController;
 
     Route::get('/segitiga', [BookController::class, 'segitiga']);
 
-    Route::post('/luasSegitiga', [BookController::class, 'luasSegitiga']);
+    //Route::post('/luasSegitiga', [BookController::class, 'luasSegitiga']);
+
+    Route::get('/luassegitiga', [BookController::class, 'luas2_segitiga']);
+
+    Route::get('/luasjajargenjang', [BookController::class, 'luasjajargenjang']);
+
+    Route::get('/luasbelahketupat', [BookController::class, 'luasbelahketupat']);
+
+    Route::get('buku', [BukuController::class, 'index']);
+    Route::post('buku', [BukuController::class, 'index']);
+    Route::put('buku/{id}', [BukuController::class, 'index']);
+    Route::delete('buku/{id}', [BukuController::class, 'index']);
+        
+
+    Route::resource('buku', BukuController::class);
+    Route::resource('pengarang', BukuController::class);
 
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
