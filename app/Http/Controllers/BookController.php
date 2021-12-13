@@ -98,4 +98,41 @@ class BookController extends Controller
     //     $luas = $panjang * $lebar;
     //     return view('luasPersegiPanjang', compact(panjang, lebar, luas));
     // }
+
+    public function luas_segitiga()
+    {
+        $alas = 3;
+        $tinggi = 4;
+        $Luas = $alas * $tinggi / 2;
+
+        return $Luas;
+    }
+
+    public function luas_jajargenjang()
+    {
+        $alas = 5;
+        $tinggi = 8;
+
+        $Luas = $alas * $tinggi;
+        return $Luas;
+    }
+
+    public function luas_belahketupat()
+    {
+        $d1 = 3;
+        $d2 = 6;
+
+        $Luas = $d1 * $d2 / 2;
+        return $Luas;
+    }
+
+    public function luas()
+    {
+        echo $this->luas_jajargenjang();
+        echo "<br>";
+        echo $this->luas_segitiga();
+        echo "<br>";
+
+        echo $this->luas_belahketupat();
+    }
 }

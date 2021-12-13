@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\bukuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,22 @@ Route::get('/persegi-panjang', [BookController::class, 'persegi_panjang']);
 
 Route::post('/github', [BookController::class, 'luaspersegipanjang']);
 
+// LUAS SEGITIGA
 Route::get('/segitiga', [BookController::class, 'segitiga']);
 
-Route::post('/luasSegitiga', [BookController::class, 'luasSegitiga']);
-// Route::post('luasSegitiga', [BookController::class, 'luasSegitiga']);
+// Route::post('/luasSegitiga', [BookController::class, 'luasSegitiga']);
+Route::get('/luas_segitiga', [BookController::class, 'luas_segitiga']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/luas_jajargenjang', [BookController::class, 'luas_jajargenjang']);
+
+Route::get('luas_belahketupat', [BookController::class, 'luas_belahketupat']);
+
+Route::get('/luas', [BookController::class, 'luas']);
+
+Route::get('/perpus', [bukuController::class, 'index']);
+
+Route::resource('buku', bukuController::class);
