@@ -30,13 +30,37 @@ use Illuminate\Support\Facades\Route;
 // });
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BukuController;
 
 // Route::get('/books', [BookController::class,'index']);
 // Route::get('/books/{judul}', [BookController::class,'index']);
 
 // Route::get('/books/{judul}', [BookController::class,'index']);
-Route::get('/books/{judul}', [BookController::class,'index']);
-Route::get('persegi-panjang', [BookController::class,'persegi_panjang']);
-Route::post('luas-persegi-panjang', [BookController::class,'luaspersegipanjang']);
+Route::get('/books/{judul}', [BookController::class, 'index']);
+Route::get('segitiga', [BookController::class, 'segitiga']);
+Route::post('luas-segitiga', [BookController::class, 'luasSegitiga']);
 // Route::post('luas-persegi-panjang', [BookController::class,'luaspersegipanjang']);
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+
+// Route::get('/jajargenjang', function () {
+//     $alas = 5;
+//     $tinggi = 8;
+//     $luas = $alas * $tinggi;
+//     return $luas;
+// });
+
+Route::get('/belahketupat', [BookController::class,'belahketupat']);
+Route::get('/jajargenjang', [BookController::class,'jajargenjang']);
+
+//Bukku
+Route::get('buku', [BukuController::class,'index']);
+// Route::post('buku', [BookController::class,'jajargenjang']);
+// Route::put('/jajargenjang', [BookController::class,'jajargenjang']);
+// Route::delete('/jajargenjang', [BookController::class,'jajargenjang']);
+Route::resource('buku', BukuController::class);
+// Route::resource('buku', Controller::class);
