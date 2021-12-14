@@ -24,6 +24,13 @@ class BukuCtrl extends Controller
         // return $request->all();
         // return 'ok'
 
+        $request->validate([
+            'judul'     => 'required',
+            'tahun_terbit' => 'required',
+            'penerbit' => 'required',
+            'id_pengarang' => 'required',
+        ]);
+
         Buku::create($request->all());
         return redirect()->route('buku.index')->with('success', 'ANDA TELAH BERHASIL MENAMBAH DATA !');
         // tabel_buku::create([
