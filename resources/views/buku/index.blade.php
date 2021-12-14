@@ -8,7 +8,7 @@
         </div>
 
         <div class="float-right">
-            <a class="btn btn-succes" href="{{ route('buku.create') }}"> Tambah buku </a>
+            <a class="btn btn-success" href="{{ route('buku.create') }}"> Tambah buku </a>
         </div>
     </div>
 </div>
