@@ -41,6 +41,4 @@ Route::get('/luas-jajargenjang-statis', [BookController::class, 'luasJajarGenjan
 
 Route::get('/luas-belahketupat-statis', [BookController::class, 'luasBelahKetupat']);
 
-Route::get('/buku', [BukuController::class, 'index']);
-
 Route::resource('buku', BukuController::class);

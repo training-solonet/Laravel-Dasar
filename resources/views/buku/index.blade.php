@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row mt-5 mb-5"></div>
-        <div class="col-lg-12 mb-5">
+    <div class="row mt-5">
+        <div class="col-lg-12">
             <div class="float-left">
                 <h2>Daftar Buku</h2>
             </div>
@@ -15,8 +15,8 @@
 
 
 @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{ {$message} }</p>
+    <div class="alert alert-success" role=>
+        <p>{{ $message }}</p>
     </div>
 @endif
 
@@ -40,7 +40,6 @@
                     <a href="{{ route('buku.edit', $dataBuku->id) }}" class="btn btn-primary btn-sm">Edit</a>
                     @csrf
                     @method('DELETE')
-    
                     <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">
                         Delete
                     </button>

@@ -16,4 +16,5 @@ class Buku extends Model
         'id_pengarang'
     ];
 
+    // protected $title = "buku";
 }
