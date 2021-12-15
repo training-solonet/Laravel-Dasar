@@ -132,7 +132,6 @@ class BookController extends Controller
         echo "<br>";
         echo $this->luas_segitiga();
         echo "<br>";
-
         echo $this->luas_belahketupat();
     }
 }
