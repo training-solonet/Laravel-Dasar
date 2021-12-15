@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\MegaController;
-Route::get('buku', [BukuController::class,'index']);
-Route::post('buku', [BukuController::class,'store']);
-Route::put('buku/{id}', [BukuController::class,'update']);
-Route::delete('buku/{id}',[BukuController::class,'destroy']);
+// Route::get('buku', [BukuController::class,'index']);
+// Route::post('buku', [BukuController::class,'store']);
+// Route::put('buku/{id}', [BukuController::class,'update']);
+// Route::delete('buku/{id}',[BukuController::class,'destroy']);
 
 
 Route::resource('buku',BukuController::class);
-Route::resource('buku',BukuController::class);
+Route::resource('pengarang',BukuController::class);
 // route menggunakan controler
 // Route::get('/books', [MegaController::class, 'index']);
 // // route menggunakan controler dan parameter
