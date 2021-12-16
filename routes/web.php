@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\bukuController;
+use App\Http\Controllers\pengarangController;
+use App\Models\pengarang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +49,10 @@ Route::get('luas_belahketupat', [BookController::class, 'luas_belahketupat']);
 
 Route::get('/luas', [BookController::class, 'luas']);
 
-Route::get('/perpus', [bukuController::class, 'index']);
+Route::get('/buku', [bukuController::class, 'index']);
 
-Route::resource('buku', bukuController::class);
+Route::resource('/buku', bukuController::class);
+
+Route::get('/pengarang', [pengarangController::class, 'index']);
+
+Route::resource('/pengarang', pengarangController::class);

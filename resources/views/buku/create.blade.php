@@ -33,10 +33,12 @@
     <input type="text" name="penerbit" class="form-control" value="{{ old('penerbit') }}" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
-  <div class="mb-3">
-    <select name="id_pengarang" value="{{ old('id_pengarang') }} class="form-select" aria-label="Default select example">
-        <option value="1">Maimunah</option>
-        <option value="2">Dj bon bon</option>
+ <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Pengarang</label>
+    <select name="id_pengarang" class="form-control" aria-label="Default select example">
+        @foreach ($pengarang as $dataPengarang)
+            <option value="{{ $dataPengarang->id }}">{{ $dataPengarang->nama }}</option>
+        @endforeach
 </select>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

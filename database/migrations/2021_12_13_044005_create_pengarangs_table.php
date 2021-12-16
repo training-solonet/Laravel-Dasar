@@ -17,8 +17,8 @@ class CreatePengarangsTable extends Migration
             $table->id();
             $table->string('nama', 100);
             $table->string('alamat');
-            $table->integer('no_telp');
-            $table->date('tgl-lahir');
+            $table->string('no_telp');
+            $table->date('tgl_lahir');
             $table->timestamps();
         });
     }

@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\pengarang;
 use Illuminate\Http\Request;
-use App\Models\tabel_buku;
 
-class bukuController extends Controller
+class pengarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,8 @@ class bukuController extends Controller
      */
     public function index()
     {
-        $buku = tabel_buku::with('pengarang')->get();
-        // return $buku;
-        return view('buku.index', compact('buku'));
-        // $buku = DB::table('tabel_bukus')->get();
-        // return view('buku.index', ['buku' => $buku]);
+        $pengarang = pengarang::all();
+        return view('pengarang.index', compact('pengarang'));
     }
 
     /**
@@ -29,9 +25,7 @@ class bukuController extends Controller
      */
     public function create()
     {
-        // return view('buku.create',);
-        $pengarang = pengarang::all();
-        return view("buku.create", compact("pengarang"));
+        return view('pengarang.create');
     }
 
     /**
@@ -42,20 +36,14 @@ class bukuController extends Controller
      */
     public function store(Request $request)
     {
-        // return::create([
-        //     "" = ""
-        // ])
         $request->validate([
-            "judul" => "required|max:20",
-            "penerbit" => "required",
-            "tahun_terbit" => "required",
-            "id_pengarang" => "required"
+            'nama' => 'required|max:20',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+            'tgl_lahir' => 'required'
         ]);
-
-
-        // return $request->all();
-        tabel_buku::create($request->all());
-        return redirect()->route('buku.index')->with('success', 'Berhasil simpan !');
+        pengarang::create($request->all());
+        return redirect()->route('pengarang.index')->with('success', 'berhasil disimpan !');
     }
 
     /**
@@ -77,12 +65,8 @@ class bukuController extends Controller
      */
     public function edit($id)
     {
-        $buku = tabel_buku::find($id);
-        $pengarang = pengarang::all();
-        return view("buku.edit", [
-            "buku" => $buku,
-            "pengarang" => $pengarang
-        ]);
+        $pengarang = pengarang::find($id);
+        return view('pengarang.edit', compact('pengarang'));
     }
 
     /**
@@ -94,13 +78,14 @@ class bukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        tabel_buku::find($id)->update([
-            "judul" => $request->judul,
-            "tahun_terbit" => $request->tahun_terbit,
-            "penerbit" => $request->penerbit,
-            "id_pengarang" => $request->id_pengarang
+        pengarang::find($id)->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'no_telp' => $request->no_telp,
+            'tgl_lahri' => $request->tgl_lahir
         ]);
-        return redirect()->route('buku.index')->with('success', 'Berhasil ubah !');
+
+        return redirect()->route('pengarang.index')->with('success', 'data berhasil di update');
     }
 
     /**
@@ -111,7 +96,7 @@ class bukuController extends Controller
      */
     public function destroy($id)
     {
-        tabel_buku::find($id)->delete();
-        return redirect()->route('buku.index')->with('success', 'Berhasil dihapus !');
+        pengarang::find($id)->delete();
+        return redirect()->route('pengarang.index')->with('success', 'data berhasil dihapus');
     }
 }

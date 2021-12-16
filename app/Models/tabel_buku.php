@@ -14,4 +14,9 @@ class tabel_buku extends Model
         'penerbit',
         'id_pengarang'
     ];
+
+    public function pengarang()
+    {
+        return $this->belongsTo(pengarang::class, 'id_pengarang');
+    }
 }

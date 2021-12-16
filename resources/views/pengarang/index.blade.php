@@ -4,10 +4,10 @@
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
-                <h2>Daftar Buku</h2>
+                <h2>Daftar pengarang</h2>
             </div>
             <div class="float-right">
-                <a href="{{ route('buku.create') }}" class="btn btn-success"> Tambah Buku</a>
+                <a href="{{ route('pengarang.create') }}" class="btn btn-success">Tambah pengarang</a>
             </div>
         </div>
     </div>
@@ -20,22 +20,21 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>judul</th>
-            <th>Tahun Terbit</th>
-            <th>Penerbit</th>
-            <th>Pengarang</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>No.Telephone</th>
+            <th>Tgl.Lahir</th>
             <th class="text-center" width="280px">aksi</th>
         </tr>
-        @foreach ($buku as $dataBuku)
-
+        @foreach ($pengarang as $dataPengarang)
         <tr>
-            <td>{{ $dataBuku->judul }}</td>
-            <td>{{ $dataBuku->tahun_terbit }}</td>
-            <td>{{ $dataBuku->penerbit }}</td>
-            <td>{{ $dataBuku->pengarang->nama }}</td>
+            <td>{{ $dataPengarang->nama }}</td>
+            <td>{{ $dataPengarang->alamat }}</td>
+            <td>{{ $dataPengarang->no_telp }}</td>
+            l<td>{{ $dataPengarang->tgl_lahir }}</td>
             <td class="text-center">
-                <form action="{{ route('buku.destroy', $dataBuku->id) }}" method="POST">
-                    <a href="{{ route('buku.edit', $dataBuku->id) }}" class="btn btn-primary btn-sm">EDIT</a>
+                <form action="{{ route('pengarang.destroy', $dataPengarang->id) }}" method="POST">
+                    <a href="{{ route('pengarang.edit', $dataPengarang->id) }}" class="btn btn-primary btn-sm">EDIT</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm

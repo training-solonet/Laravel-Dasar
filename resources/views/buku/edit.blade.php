@@ -2,7 +2,7 @@
 
 @section("content")
 <center>
-    <h1>Halaman Create</h1>
+    <h1>Halaman Edit</h1>
 </center>
 
 <form method="POST" action="{{ route('buku.update', $buku->id) }}">
@@ -34,11 +34,19 @@
     <div id="emailHelp" class="form-text"></div>
   </div>
   <div class="mb-3">
-    <select name="id_pengarang" value="{{ $buku->id_pengarang }} class="form-select" aria-label="Default select example">
-        <option value="1">Roni</option>
-        <option value="2">Angello</option>
+    <label for="exampleInputEmail1" class="form-label">Pengarang</label>
+    <select name="id_pengarang" class="form-control" aria-label="Default select example">
+        @foreach ($pengarang as $dataPengarang)
+            @if ($buku->id_pengarang === $dataPengarang->id)
+                <option selected value="{{ $dataPengarang->id }}">{{ $dataPengarang->nama }}</option>
+            @else
+                <option value="{{ $dataPengarang->id }}">{{ $dataPengarang->nama }}</option>
+            @endif
+
+        @endforeach
 </select>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 @endsection
