@@ -83,19 +83,22 @@ class BookController extends Controller
         ]);
     }
 
-public function jajargenjang() {
-    $alas = 5;
-    $tinggi = 8;
-    $luas = $alas * $tinggi;
-    return $luas;
-}
+    public function jajargenjang()
+    {
+        $alas = 5;
+        $tinggi = 8;
+        $luas = $alas * $tinggi;
+        return $luas;
+    }
 
-public function belahketupat() {
-    $d1 = 3;
-    $d2 = 6;
-    $luas = $d1 * $d2 / 2;
-    return $luas;
-}
+    public function belahketupat()
+    {
+        $d1 = 3;
+        $d2 = 6;
+        $luas = $d1 * $d2 / 2;
+        return $luas;
+    }
+
 
     // Jajar Genjang
     // public function jajargenjang (){
@@ -109,7 +112,7 @@ public function belahketupat() {
     // function segitiga(){
     //     return view('lagii');
     // }
-    }
+}
     
 
 // compact()

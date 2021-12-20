@@ -16,5 +16,12 @@ class buku extends Model
         'id_pengarang'
     ];
 
-    protected $table = 'bukus';
+    // protected $table = 'bukus';
+
+
+    public function pengarang()
+    {
+
+        return $this->belongsTo(pengarang::class, 'id_pengarang');
+    }
 }

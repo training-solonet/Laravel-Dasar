@@ -4,10 +4,10 @@
 <div class="row mt-5 mb-5">
     <div class="col-lg-12 margin-tb">
         <div class="float-left">
-            <h2>Daftar Buku</h2>
+            <h2>Daftar pengarang</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-success" href="{{ route('buku.create') }}"> Tambah Buku</a>
+            <a class="btn btn-success" href="{{ route('pengarang.create') }}"> Tambah pengarang</a>
         </div>
     </div>
 </div>
@@ -21,26 +21,27 @@
 <table id="myTable" class="table table-bordered">
     <thead>
         <tr>
-            {{-- <th>No.</th> --}}
-            <th>Judul</th>
-            <th>Tahun Terbit</th>
-            <th>Penerbit</th>
-            <th>Pengarang</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>No. Telp</th>
+            <th>Tanggal Lahir</th>
             <th width="280px" class="text-center">Aksi</th>
         </tr>
     </thead>
-    @foreach($buku as $bukus)
-        <tbody>
+    <tbody>
+        @foreach($pengarang as $pengarangs)
             <tr>
-                <td>{{ $bukus->judul }}</td>
-                <td>{{ $bukus->tahun_terbit }}</td>
-                <td>{{ $bukus->penerbit }}</td>
-                <td>{{ $bukus->pengarang->nama }}</td>
+                <td>{{ $pengarangs->nama }}</td>
+                <td>{{ $pengarangs->alamat }}</td>
+                <td>{{ $pengarangs->no_telp }}</td>
+                <td>{{ $pengarangs->tgl_lahir }}</td>
+                {{-- <td>{{ $pengarangs->pengarang->nama }}</td> --}}
                 <td class="text-center">
-                    <form action="{{ route('buku.destroy',$bukus->id) }}" method="POST">
+                    <form action="{{ route('pengarang.destroy',$pengarangs->id) }}"
+                        method="POST">
 
                         <a class="btn btn-primary btn-sm"
-                            href="{{ route('buku.edit',$bukus->id) }}">Edit</a>
+                            href="{{ route('pengarang.edit',$pengarangs->id) }}">Edit</a>
 
                         @csrf
                         @method('DELETE')
@@ -50,8 +51,11 @@
                     </form>
                 </td>
             </tr>
-        </tbody>
-    @endforeach
+        @endforeach
+    </tbody>
+
+
 </table>
+
 
 @endsection

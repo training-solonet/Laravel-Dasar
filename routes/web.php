@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\PengarangController;
 
 // Route::get('/books', [BookController::class,'index']);
 // Route::get('/books/{judul}', [BookController::class,'index']);
@@ -54,13 +55,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return $luas;
 // });
 
-Route::get('/belahketupat', [BookController::class,'belahketupat']);
-Route::get('/jajargenjang', [BookController::class,'jajargenjang']);
+Route::get('/belahketupat', [BookController::class, 'belahketupat']);
+Route::get('/jajargenjang', [BookController::class, 'jajargenjang']);
 
 //Bukku
-Route::get('buku', [BukuController::class,'index']);
+Route::get('buku', [BukuController::class, 'index']);
 // Route::post('buku', [BookController::class,'jajargenjang']);
 // Route::put('/jajargenjang', [BookController::class,'jajargenjang']);
 // Route::delete('/jajargenjang', [BookController::class,'jajargenjang']);
 Route::resource('buku', BukuController::class);
+Route::resource('pengarang', PengarangController::class);
 // Route::resource('buku', Controller::class);
